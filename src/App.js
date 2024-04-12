@@ -5,10 +5,26 @@ import Message from './components/Message';
 import Value from './components/Value';
 import FoodsApi from './components/FoodsApi';
 import Parent from './components/Parent';
+import CounterColor from './components/CounterColor';
+import NextImg from './components/NextImg';
+import VipApi from './components/VipApi';
+import GamesApi from './components/GamesApi';
 
 function App() {
   return (
     <div className="container">
+      <GamesApi />
+      <hr/>
+      <VipApi />
+      <hr/>
+      <NextImg >
+
+      </NextImg>
+      <hr/>
+      <CounterColor>
+      
+      </CounterColor>
+      <hr/>
       <Parent>
         <p>Hello</p>
       </Parent>
