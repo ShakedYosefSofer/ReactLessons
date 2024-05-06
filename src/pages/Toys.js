@@ -18,7 +18,7 @@ export default function Toys() {
   const doApi = async() => {
     const queryS = query.get("s") || "";
 
-    const url = API_URL+"/toys?s="+queryS;
+    const url = API_URL+"/toys?limit=20&s="+queryS;
     try {
       const resp = await fetch(url);
       const data = await resp.json();
