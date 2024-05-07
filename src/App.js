@@ -1,30 +1,34 @@
-import {BrowserRouter,Routes,Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import './App.css';
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Header1 from "./components/Header1";
 import Page404 from "./pages/Page404";
-import Vip from "./pages/Vip";
-import VipInfo from "./pages/VipInfo";
-import Toys from "./pages/Toys";
-import Pixa from "./pages/Pixa";
+import CounterPage from "./pages/CounterPage";
+import ContextProvider from "./context/Context";
+import ShopPage from "./pages/ShopPage";
+import StudentPage from "./pages/StudentPage";
 
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Header1 />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/vip" element={<Vip />} />
-        <Route path="/vip/:rank" element={<VipInfo />} />
-        <Route path="/toys" element={<Toys />} />
-        <Route path="/pixa" element={<Pixa />} />
-        <Route path="*" element={<Page404 />} />
 
-      </Routes>
-    </BrowserRouter>
+
+
+  return (
+    <ContextProvider>
+      <BrowserRouter>
+        <Header1 />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/counter" element={<CounterPage />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/student" element={<StudentPage />} />
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+      </BrowserRouter>
+    </ContextProvider>
   );
 }
 

@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { AppContext } from '../context/Context'
 
 export default function CounterChild() {
+  const {setCounter} = useContext(AppContext)
+
   return (
     <div>
-        <button className="btn btn-primary">add 1</button>
+      <button onClick={() => {
+        setCounter(counter => counter+1)
+      }}>Add 1</button>
     </div>
   )
 }
