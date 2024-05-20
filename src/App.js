@@ -9,6 +9,7 @@ import CounterPage from "./pages/CounterPage";
 import ContextProvider from "./context/Context";
 import ShopPage from "./pages/ShopPage";
 import StudentPage from "./pages/StudentPage";
+import Login from "./pages/Login";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/counter" element={<CounterPage />} />
           <Route path="/shop" element={<ShopPage />} />
           <Route path="/student" element={<StudentPage />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>
