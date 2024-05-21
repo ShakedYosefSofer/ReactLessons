@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { AppContext } from '../context/Context'
 
 export default function ShopForm() {
-  const [nameVal,setNameVal] = useState()
+  const [nameVal,setNameVal] = useState("")
   const [amountVal,setAmountVal] = useState(1)
 
   const {addProduct, resetAllProducts} = useContext(AppContext);
@@ -15,7 +15,12 @@ export default function ShopForm() {
       id:Date.now()
     }
     console.log(newItem);
-    addProduct(newItem);
+    // בודק שיש לפחות אות אחת בשם של המוצר
+    if(newItem.name.length > 1){
+      addProduct(newItem);
+    }
+    // שמירת מידע בלוקל לניסוי
+    localStorage.setItem("test_local",nameVal)
   }
 
   return (
