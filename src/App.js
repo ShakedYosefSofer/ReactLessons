@@ -10,6 +10,7 @@ import ContextProvider from "./context/Context";
 import ShopPage from "./pages/ShopPage";
 import StudentPage from "./pages/StudentPage";
 import Login from "./pages/Login";
+import Pixa from "./pages/Pixa";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/shop" element={<ShopPage />} />
           <Route path="/student" element={<StudentPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/pixa" element={<Pixa />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>
