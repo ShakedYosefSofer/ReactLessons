@@ -1,37 +1,60 @@
-// import { createContext, useState } from "react";
+// // StudentContext.js
+// import { createContext, useLayoutEffect, useState } from "react";
+
 // export const AppContext = createContext(null);
 
-// export default function ContextProvider(props){
-//   const [counter,setCounter] = useState(99);
-//   const [shop_ar,setShopAr] = useState([
-//     {name:"milk",amount:4,id:1},
-//     {name:"bamba",amount:2,id:2},
-//     {name:"shoko",amount:6,id:3},
+// export default function ContextProvider(props) {
+//   const [counter, setCounter] = useState(99);
+//   const [showEditStudents, setShowStudentEdits] = useState(false);
+//   const [currentEditItems, setCurrentEdits] = useState({});
+//   const [student_ar, setStudentAr] = useState([
+//     { name: "Moshe", grade: 40, id: 1 },
+//     { name: "Avi", grade: 92, id: 2 },
+//     { name: "Anonimus", grade: 60, id: 3 },
 //   ]);
 
-//   const addProduct = (newItem) => {
-//     setShopAr([...shop_ar,newItem]);
-//   }
+//   useLayoutEffect(() => {
+//     if (localStorage.getItem("student_ar")) {
+//       setStudentAr(JSON.parse(localStorage.getItem("student_ar")));
+//     }
+//   }, []);
 
-//   const resetAllProducts = () => {
-//     setShopAr([]);
-//   }
+//   const addStudent = (newItem) => {
+//     setStudentAr([...student_ar, newItem]);
+//     localStorage.setItem("student_ar", JSON.stringify([...student_ar, newItem]));
+//   };
 
-//   const deleteProduct = (del_id) => {
-//     const filter_ar = shop_ar.filter(item => item.id != del_id)
-//     setShopAr(filter_ar);
-//   }
+//   const resetAllStudent = () => {
+//     setStudentAr([]);
+//     localStorage.setItem("student_ar", JSON.stringify([]));
+//   };
+
+//   const deleteStudent = (del_id) => {
+//     const filter_ar = student_ar.filter(item => item.id !== del_id);
+//     setStudentAr(filter_ar);
+//     localStorage.setItem("student_ar", JSON.stringify(filter_ar));
+//   };
+
+//   const updateStudent = (updateStudent) => {
+//     const map_ar = student_ar.map((item) => {
+//       if (item.id === updateStudent.id) {
+//         item = updateStudent;
+//       }
+//       return item;
+//     });
+//     setStudentAr(map_ar);
+//     localStorage.setItem("student_ar", JSON.stringify(map_ar));
+//   };
 
 //   const globalValue = {
-//     counter,setCounter,
-//     shop_ar,addProduct,resetAllProducts,deleteProduct
-//   }
-//     // Value - כל מה שיהיה מהמאפיין שנעביר לווליו
-//   // יהפוך להיות גלובלי לכל הקומפנינטת ש
-//   // APPCONTEXT PROVIDER עוטף
+//     counter, setCounter,
+//     student_ar, addStudent, resetAllStudent, deleteStudent,
+//     showEditStudents, setShowStudentEdits, currentEditItems, setCurrentEdits, updateStudent
+//   };
+
 //   return (
-//     <AppContext.Provider value={globalValue} >
+//     <AppContext.Provider value={globalValue}>
 //       {props.children}
 //     </AppContext.Provider>
-//   )
+//   );
 // }

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState } from "react"; 
 import './App.css';
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -26,7 +26,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/counter" element={<CounterPage />} />
           <Route path="/shop" element={<ShopPage />} />
-          <Route path="/student" element={<StudentPage />} />
+          <Route path="/student" element={<StudentPage  />} />
           <Route path="/login" element={<Login />} />
           <Route path="/pixa" element={<Pixa />} />
           <Route path="*" element={<Page404 />} />
