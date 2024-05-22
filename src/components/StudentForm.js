@@ -38,7 +38,7 @@ export default function StudentForm() {
           if(window.confirm("Delete all?")){
             resetAllStudent();
           }
-        }} type="button" className='btn btn-danger mt-4 ms-2'>Reset all</button>
+        }} type="button" className='btn btn-danger mt-4 ms-2'>Delete all</button>
 
       </form>
     </div>
